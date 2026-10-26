@@ -9,6 +9,7 @@ plt.figure(figsize=(10, 6))
 df.plot(ax=plt.gca(), marker='o')
 
 plt.yscale('log')
+plt.xscale('log')
 
 plt.title('Execution time of various search algorithms')
 plt.xlabel('Test Size (log)')

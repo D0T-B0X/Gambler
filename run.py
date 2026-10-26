@@ -43,7 +43,7 @@ def main():
         w = csv.writer(f)
         w.writerow(["Test Size", "Linear", "Las Vegas", "Las Vegas (with bitmap)", "Parallel"])
         for i in range(n_iter):
-            row = [100 * (10 * i)]
+            row = [100 * pow(10, i)]
             for opt in OPTIONS:
                 v = results[opt]
                 row.append(f"{v[i]:.6f}" if i < len(v) else "")
