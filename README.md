@@ -25,13 +25,13 @@ Make sure `hipcc` works on your system and you can compile HIP kernels, this is 
 ```
 hipcc -std=c++23 test.cpp parallel_search.hip -o test
 ```
-> Run `python3 run.py` to generate the benchmark results stored in `results.csv`
-> Finally, to generate the plot, execute `python3 plot_gen.py`
+> Run `python3 run.py` to generate benchmark results stored in `results.csv`
+> Finally, generate a plot of the results using `python3 plot_gen.py`
 
 ## Results
 
- - The Las Vegas Search algorithm performed consistently worse compared to linear search
- - Las Vegas with a bitmap suffered further delays due to the added overhead of the bitmap
- - Parallel Search - executed on the GPU performed better under a bigger benchmark but suffered the second highest execution time at low test size incurred by host to device request latencies.
+ - Las Vegas Search consistently performs worse compared to linear search
+ - Las Vegas with a bitmap suffered further slowdown due to the added overhead of a bitmap
+ - Parallel Search - executed on the GPU performs better under a larger benchmark size but suffers the second highest execution time at low volume of test cases incurred by host to device request latencies.
 
 ![results](media/benchmark_results.png)1z
